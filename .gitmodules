@@ -1,0 +1,3 @@
+[submodule "zenscroll"]
+	path = zenscroll
+	url = https://github.com/zengabor/zenscroll.git

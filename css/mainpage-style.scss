@@ -16,9 +16,9 @@
   font-display: swap;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+// html {
+//   scroll-behavior: smooth;
+// }
 
 body {
   padding: 0;
@@ -26,7 +26,6 @@ body {
   background-color: white;
   font-family: Montserrat;
   top: 0;
-  scroll-snap-type: y mandatory;
 }
 
 .background {
@@ -78,13 +77,12 @@ body {
   padding-left: 10vw;
   padding-right: 10vw;
   padding-top: calc(300px + 5vh);
-  height: 100%;
+  height: 100vh;
   z-index: 1;
   background-color: white;
   overflow-y: hidden;
   overflow-x: visible;
-  box-shadow: 0px -29px 36px 0px rgba(255,255,255,1);
-  scroll-snap-align: start;
+  box-shadow: 0px -50px 36px 0px rgba(255,255,255,1);
 }
 
 .header {
@@ -121,6 +119,7 @@ body {
   display: flex;
   width: 90vw;
   height: 7vh;
+  min-height: 7vh;
   top: calc(128px - 3.5vh);
   z-index: 2;
   background: white;
@@ -143,6 +142,7 @@ body {
   height: 7vh;
   font-size: 1vw;
   line-height: 7vh;
+  z-index: 7;
   font-family: Montserrat;
   text-transform: uppercase;
   padding-left: 1vw;
@@ -237,4 +237,29 @@ body {
   -webkit-transform: rotate(30deg);
           transform: rotate(30deg);
   // cursor: pointer;
+}
+
+.footer {
+  display: block;
+  position: relative;
+  top: 0;
+  margin: 0;
+  width: 90vw;
+  transform: translateX(5vw);
+  height: 5vh;
+  z-index: 1;
+  background-color: #adcf44;
+  overflow-y: hidden;
+  overflow-x: visible;
+  border-radius: 2vh 2vh 0 0;
+  box-shadow: 4px -4px 19px 2px rgba(0,0,0,0.3);
+}
+
+.footer p {
+  font-family: Montserrat;
+  font-size: 1.5vh;
+  text-align: center;
+  color: #2F2F2F;
+  width: 100%;
+  vertical-align: middle;
 }
