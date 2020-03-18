@@ -38,8 +38,6 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  position: sticky;
-  position: -webkit-sticky;
   top: 0;
   overflow: hidden;
 }
@@ -62,7 +60,6 @@ body {
 .slide {
   display: block;
   position: sticky;
-  position: -webkit-sticky;
   top: 0;
   margin: 0;
   width: calc(100% + 10vw);
