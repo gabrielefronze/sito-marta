@@ -24,7 +24,7 @@ body {
   padding: 0;
   margin: 0;
   background-color: white;
-  font-family: Montserrat;
+  font-family: Montserrat;top: 0
 }
 
 .background {
@@ -59,7 +59,7 @@ body {
 
 .slide {
   display: block;
-  position: sticky;
+  position: relative;
   top: 0;
   margin: 0;
   width: calc(100% + 10vw);
