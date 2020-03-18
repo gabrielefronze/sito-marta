@@ -24,7 +24,9 @@ body {
   padding: 0;
   margin: 0;
   background-color: white;
-  font-family: Montserrat;top: 0
+  font-family: Montserrat;
+  top: 0;
+  scroll-snap-type: y mandatory;
 }
 
 .background {
@@ -40,6 +42,8 @@ body {
   background-position: center;
   top: 0;
   overflow: hidden;
+  padding-left: -1vw;
+  min-width: 102vw;
 }
 
 .motto {
@@ -55,6 +59,13 @@ body {
   z-index: 1;
   text-align: center;
   text-shadow: 4px 0 32px #FFF, -4px 0 32px #FFF, 0 4px 32px #FFF, 0 -4px 32px #FFF, 2px 2px 32px #FFF, -2px -2px 32px #FFF, 2px -2px 32px #FFF, -2px 2px 32px #FFF;
+  animation: fade-me-in 1.5s;
+}
+
+@keyframes fade-me-in {
+  0% {opacity:0;}
+  10% {opacity:0;}
+  100% {opacity:1;}
 }
 
 .slide {
@@ -72,14 +83,8 @@ body {
   background-color: white;
   overflow-y: hidden;
   overflow-x: visible;
-  -webkit-box-shadow: 0px -29px 36px 0px rgba(255,255,255,1);
-  -moz-box-shadow: 0px -29px 36px 0px rgba(255,255,255,1);
   box-shadow: 0px -29px 36px 0px rgba(255,255,255,1);
-}
-
-.slide:last-of-type {
-  top: calc(300px + 5vh);
-  height: calc(100% - 300px - 5vh);
+  scroll-snap-align: start;
 }
 
 .header {
@@ -98,13 +103,17 @@ body {
   position: fixed;
   height: 256px;
   width: 256px;
-  z-index: 3;
+  z-index: 9;
+  animation: fade-me-in 1s;
+  border-radius: 45px;
+  box-shadow: 10px 10px 19px -4px rgba(0,0,0,0.3);
 }
 
 .logo img {
   position: relative;
   width: 100%;
   height: 100%;
+  z-index: 50;
 }
 
 .navbar {
@@ -115,17 +124,16 @@ body {
   top: calc(128px - 3.5vh);
   z-index: 2;
   background: white;
-  border-radius: 2vmin;
-  -webkit-box-shadow: 10px 10px 19px -4px rgba(0,0,0,0.3);
-  -moz-box-shadow: 10px 10px 19px -4px rgba(0,0,0,0.3);
+  border-radius: 0 0 2vmin 0;
   box-shadow: 10px 10px 19px -4px rgba(0,0,0,0.3);
+  animation: fade-me-in 2s;
 }
 
 .spacer {
   position: fixed;
   display: flex;
-  left: 256px;
-  width: calc(80%);
+  left: 254px;
+  width: 80%;
   height: 7vh;
 }
 
@@ -140,68 +148,77 @@ body {
   padding-left: 1vw;
   padding-right: 1vw;
   border: none;
-  // cursor: pointer;
+  cursor: pointer;
   -webkit-transition: all .2s ease-in-out;
   transition:         all .2s ease-in-out;
 }
 
-.dropdown {
+.spacer .dropdown {
   position: relative;
   display: inline-block;
+  width: max-content;
+  z-index: 2;
+  cursor: pointer;
 }
 
-.dropdown-content {
-  display: none;
+.spacer .dropdown-content {
+  display: inline-flex;
+  transform: scaleX(0);
+  opacity: 0;
+  transform-origin: left;
   height: auto;
-  position: absolute;
-  background-color: #f1f1f1;
-  border-radius: 0 0 2vmin 2vmin;
-  width: 100%;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 5;
-  
+  position: fixed;
+  background-color: #adcf44;
+  border-radius: 0 2vmin 2vmin 0;
+  width: fit-content;
+  top: calc(128px + 3.5vh);
+  left: 256px;
+  z-index: 10;
+  -webkit-transition: all .2s ease-in-out;
+  transition:         all .2s ease-in-out;
+  box-shadow: 10px 10px 19px -4px rgba(0,0,0,0.3);
 }
 
-.dropdown-content a {
+.spacer .dropdown-content a {
   color: black;
   text-decoration: none;
   display: block;
   padding-left: 1vw;
+  padding-right: 1vw;
   font-size: .8vw;
   line-height: 3vh;
   font-family: Montserrat;
   text-transform: lowercase;
+  text-align: center;
 }
 
-.dropdown-content a:hover {
-  color: #d16833;
+.spacer .dropdown:hover .dropdown-content {
+  transform: scaleX(1);
+  opacity: 1;
 }
 
-.dropdown:hover .dropdown-content {
-  display: block;
+.spacer .dropdown:hover .dropbtn {
+  color: white;
+  background-color: #adcf44;
 }
 
-.dropdown:hover .dropbtn {
-  background-color: #f1f1f1;
-  color: #d16833;
-}
-
-.dropbtn:hover a {
-  color: #d16833;
+.spacer .dropdown-content a:hover {
+  color: white;
 }
 
 .social {
   position: fixed;
   display: flex;
   width: 12vh;
-  height: 10.5vh;
+  height: 3.5vh;
   left: calc(90vw - 12vh );
   top: calc(128px - 7vh);
   z-index: 1;
   background: white;
-  border-radius: 2vmin;
+  border-radius: 2vmin 2vmin 0 0;
   line-height: 7vh;
   text-align: right;
+  animation: fade-me-in 2s;
 }
 
 .social img {
