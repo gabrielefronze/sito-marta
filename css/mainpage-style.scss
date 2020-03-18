@@ -84,7 +84,7 @@ body {
 
 .header {
   position: fixed;
-  height: 256px;
+  height: 100%;
   width: 100vw;
   top: 5vh;
   left: 0;
@@ -125,26 +125,67 @@ body {
   position: fixed;
   display: flex;
   left: 256px;
+  width: calc(80%);
   height: 7vh;
 }
 
-.spacer a {
-  float: left;
-  display: block;
+.spacer .dropbtn {
+  background-color: white;
   color: black;
-  text-align: center;
-  padding-left: 1vw;
-  padding-right: 1vw;
-  text-decoration: none;
+  height: 7vh;
   font-size: 1vw;
   line-height: 7vh;
   font-family: Montserrat;
   text-transform: uppercase;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  border: none;
+  // cursor: pointer;
   -webkit-transition: all .2s ease-in-out;
   transition:         all .2s ease-in-out;
 }
 
-.spacer a:hover {
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  height: auto;
+  position: absolute;
+  background-color: #f1f1f1;
+  border-radius: 0 0 2vmin 2vmin;
+  width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 5;
+}
+
+.dropdown-content a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  padding-left: 1vw;
+  font-size: .8vw;
+  line-height: 3vh;
+  font-family: Montserrat;
+  text-transform: lowercase;
+}
+
+.dropdown-content a:hover {
+  color: #d16833;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #f1f1f1;
+  color: #d16833;
+}
+
+.dropbtn:hover a {
   color: #d16833;
 }
 
@@ -177,5 +218,5 @@ body {
 .social img:hover {
   -webkit-transform: rotate(30deg);
           transform: rotate(30deg);
-  cursor: pointer;
+  // cursor: pointer;
 }
