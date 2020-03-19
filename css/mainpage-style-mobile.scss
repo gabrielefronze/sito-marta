@@ -26,7 +26,7 @@ body {
   overflow-x: hidden;
 }
 
-body:after{
+.background {
   content:"";
   position:fixed; /* stretch a fixed position to the whole screen */
   top:0;
@@ -45,7 +45,7 @@ body:after{
   margin: 0;
   padding: 0;
   width: 100vw;
-  height: calc(5vh + 7.5vw - 3.5vh + 2px);
+  height: 100vh;
   z-index: 4;
   background-image: url("./images/background-empty.jpg");
   background-position: center;
@@ -60,13 +60,14 @@ body:after{
 
 .motto {
   position: fixed;
-  width: 90vw;
-  height: 90vh;
+  width: 60%;
+  left: 20%;
+  height: fit-content;
   margin: 0;
-  padding-top: calc(5vh + 14vw + 8vh);
-  padding-left: 5vw;
+  padding: 0;
+  top: 41vmin;
   font-family: playlist;
-  font-size: 10vh;
+  font-size: 10vmin;
   color: black;
   z-index: 0;
   text-align: center;
@@ -86,29 +87,18 @@ body:after{
   100% {opacity:1;}
 }
 
-.slide-fade-up {
+.slide-fade {
   display: block;
   position: sticky;
+  top: calc(5vh + 7.5vw - 3.5vh);
   margin: 0;
   left: 0;
-  top: 0;
   width: 100vw;
   height: 10vh;
+  transform: translateY(calc(-10vh));
   z-index: 5;
+  // background-color: red;
   background-image: linear-gradient(to bottom, rgba(255,255,255,0) 5%, white 100%);
-}
-
-.slide-fade-down {
-  display: block;
-  position: sticky;
-  margin: 0;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: calc(5vh + 7.5vw);
-  // transform: translateY(calc(-10vh + 4px));
-  z-index: 5;
-  background-color: white;
 }
 
 .slide {
@@ -118,15 +108,15 @@ body:after{
   left: 0;
   margin: 0;
   padding: 0;
-  width: 80vw;
+  width: 100vw;
   padding-top: calc(15vw + 6vh);
-  padding-left: 10vw;
-  padding-right: 10vw;
+  transform: translateY(calc(-10vh + 2px));
   height: 100vh;
   z-index: 1;
   background-color: white;
   overflow: hidden;
 }
+
 
 .placeholder{
   display: flex;
@@ -136,7 +126,9 @@ body:after{
   margin: 0;
   padding: 0;
   width: 100vw;
-  height: 90vh;
+  padding-top: calc(15vw + 6vh);
+  transform: translateY(calc(-10vh + 2px));
+  height: 60vh;
   z-index: 1;
   overflow: hidden;
 }
@@ -151,7 +143,6 @@ body:after{
   position: fixed;
   transform: translateX(5vw);
   z-index: 10;
-  animation: fade-me-in 1s;
 }
 
 .logo-container {
@@ -171,6 +162,7 @@ body:after{
   height: 15vw;
   width: 15vw;
   z-index: 3;
+  animation: fade-me-in 1s;
   border-radius: 2.6vw;
   box-shadow: 10px 10px 19px -4px rgba(0,0,0,0.3);
   -webkit-transition: all .2s ease-in-out;
@@ -203,6 +195,7 @@ body:after{
   background: white;
   border-radius: 0 0 2vmin 0;
   box-shadow: 10px 10px 19px -4px rgba(0,0,0,0.3);
+  animation: fade-me-in 2s;
 }
 
 .spacer {
@@ -294,14 +287,14 @@ body:after{
   width: 12vw;
   height: 3.5vw;
   left: calc(90vw - 12vw);
-  top: calc(7.5vw - 1.75vw - 3.5vw + 2px);
+  top: calc(7.5vw - 1.75vw - 3.5vw);
   z-index: 1;
   background: white;
   border-radius: 2vmin 2vmin 0 0;
   line-height: 3.5vw;
   text-align: right;
+  animation: fade-me-in 2s;
   overflow: visible;
-  box-shadow: 10px 19px 19px -4px rgba(0,0,0,0.3);
 }
 
 .social img {
