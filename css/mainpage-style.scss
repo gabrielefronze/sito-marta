@@ -16,16 +16,13 @@
   font-display: swap;
 }
 
-// html {
-//   scroll-behavior: smooth;
-// }
-
 body {
   padding: 0;
   margin: 0;
   background-color: white;
   font-family: Montserrat;
   top: 0;
+  overflow-x: hidden;
 }
 
 .background {
@@ -45,20 +42,46 @@ body {
   min-width: 102vw;
 }
 
-.motto {
-  position: fixed;
-  width: 100%;
-  height: calc(100vh - 256px);
+.top {
   margin: 0;
   padding: 0;
-  top: calc(300px + 4vh);
+  width: 100vw;
+  height: calc(5vh + 128px);
+  z-index: 2;
+  background-image: url("/images/background-empty.jpg");
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: sticky;
+  background-color: red;
+  top: 0;
+  overflow: hidden;
+  padding-left: -1vw;
+  min-width: 102vw;
+}
+
+.motto {
+  position: fixed;
+  width: 60%;
+  left: 20%;
+  height: fit-content;
+  margin: 0;
+  padding: 0;
+  top: calc(300px + 4vmax);
   font-family: playlist;
-  font-size: 10vh;
+  font-size: 10vmin;
   color: black;
   z-index: 1;
   text-align: center;
   text-shadow: 4px 0 32px #FFF, -4px 0 32px #FFF, 0 4px 32px #FFF, 0 -4px 32px #FFF, 2px 2px 32px #FFF, -2px -2px 32px #FFF, 2px -2px 32px #FFF, -2px 2px 32px #FFF;
   animation: fade-me-in 1.5s;
+  -webkit-transition: all .2s ease-in-out;
+  transition:         all .2s ease-in-out;
+}
+
+.motto:hover {
+  transform: scale(1.03);
 }
 
 @keyframes fade-me-in {
@@ -87,8 +110,8 @@ body {
 
 .header {
   position: fixed;
-  height: 100%;
-  width: 100vw;
+  height: 300px;
+  width: 95vw;
   top: 5vh;
   left: 0;
   overflow: hidden;
@@ -105,6 +128,13 @@ body {
   animation: fade-me-in 1s;
   border-radius: 45px;
   box-shadow: 10px 10px 19px -4px rgba(0,0,0,0.3);
+  -webkit-transition: all .2s ease-in-out;
+  transition:         all .2s ease-in-out;
+  transform-origin: top left;
+}
+
+.logo:hover {
+  transform: scale(1.03);
 }
 
 .logo img {
@@ -151,6 +181,10 @@ body {
   cursor: pointer;
   -webkit-transition: all .2s ease-in-out;
   transition:         all .2s ease-in-out;
+}
+
+.dropdown button:focus {
+  outline:0;
 }
 
 .spacer .dropdown {
@@ -234,9 +268,9 @@ body {
 }
 
 .social img:hover {
-  -webkit-transform: rotate(30deg);
-          transform: rotate(30deg);
-  // cursor: pointer;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  cursor: pointer;
 }
 
 .footer {
