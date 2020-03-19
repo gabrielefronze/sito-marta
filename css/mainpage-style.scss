@@ -29,7 +29,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
+  height: 82vh;
   z-index: 1;
   background-image: url("/images/background-empty.jpg");
   background-attachment: fixed;
@@ -46,15 +46,14 @@ body {
   margin: 0;
   padding: 0;
   width: 100vw;
-  height: calc(5vh + 128px);
-  z-index: 2;
+  height: 20vh;
+  z-index: 4;
   background-image: url("/images/background-empty.jpg");
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
   position: sticky;
-  background-color: red;
   top: 0;
   overflow: hidden;
   padding-left: -1vw;
@@ -72,7 +71,7 @@ body {
   font-family: playlist;
   font-size: 10vmin;
   color: black;
-  z-index: 1;
+  z-index: 0;
   text-align: center;
   text-shadow: 4px 0 32px #FFF, -4px 0 32px #FFF, 0 4px 32px #FFF, 0 -4px 32px #FFF, 2px 2px 32px #FFF, -2px -2px 32px #FFF, 2px -2px 32px #FFF, -2px 2px 32px #FFF;
   animation: fade-me-in 1.5s;
@@ -90,6 +89,19 @@ body {
   100% {opacity:1;}
 }
 
+.slide-fade {
+  display: block;
+  position: sticky;
+  top: 180px;
+  margin: 0;
+  width: 120vw;
+  height: 100px;
+  transform: translateX(-10vw);
+  z-index: 5;
+  background-color: white;
+  box-shadow: 0px -50px 36px 0px rgba(255,255,255,1);
+}
+
 .slide {
   display: block;
   position: relative;
@@ -103,9 +115,6 @@ body {
   height: 100vh;
   z-index: 1;
   background-color: white;
-  overflow-y: hidden;
-  overflow-x: visible;
-  box-shadow: 0px -50px 36px 0px rgba(255,255,255,1);
 }
 
 .header {
