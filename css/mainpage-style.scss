@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: 'playlist';
-  src: url('fonts/playlist-script.woff') format('woff');
+  src: url('/fonts/playlist-script.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: 'playlistCaps';
-  src: url('fonts/playlist-caps.woff') format('woff');
+  src: url('/fonts/playlist-caps.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -31,7 +31,7 @@ body {
   width: 100%;
   height: 82vh;
   z-index: 1;
-  background-image: url("images/background-empty.jpg");
+  background-image: url("/images/background-empty.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
@@ -48,7 +48,7 @@ body {
   width: 100vw;
   height: 20vh;
   z-index: 4;
-  background-image: url("images/background-empty.jpg");
+  background-image: url("/images/background-empty.jpg");
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
