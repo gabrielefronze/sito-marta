@@ -23,21 +23,22 @@ body {
   font-family: Montserrat;
   font-size: .8vw;
   top: 0;
+  overflow-x: hidden;
 }
 
-.background {
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-  height: 82vh;
-  z-index: 1;
-  background-image: url("./images/background-empty.jpg");
-  background-attachment: fixed;
+body:after{
+  content:"";
+  position:fixed; /* stretch a fixed position to the whole screen */
+  top:0;
+  height:100vh; /* fix for mobile browser address bar appearing disappearing */
+  left:0;
+  right:0;
+  z-index:-1; /* needed to keep in the background */
+  background: url(./images/background-empty.jpg) center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  top: 0;
-  overflow: hidden;
 }
 
 .top {
@@ -49,7 +50,7 @@ body {
   background-image: url("./images/background-empty.jpg");
   background-position: center;
   background-attachment: fixed;
-  background-size: cover;
+  background-size: 100% auto;
   background-repeat: no-repeat;
   position: sticky;
   top: 0;
@@ -64,7 +65,7 @@ body {
   height: fit-content;
   margin: 0;
   padding: 0;
-  top: 41vh;
+  top: 41vmin;
   font-family: playlist;
   font-size: 10vmin;
   color: black;
@@ -109,11 +110,26 @@ body {
   padding: 0;
   width: 100vw;
   padding-top: calc(15vw + 6vh);
-  margin-left: 5vw;
   transform: translateY(calc(-10vh + 2px));
   height: 100vh;
   z-index: 1;
   background-color: white;
+  overflow: hidden;
+}
+
+
+.placeholder{
+  display: flex;
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  padding-top: calc(15vw + 6vh);
+  transform: translateY(calc(-10vh + 2px));
+  height: 80vh;
+  z-index: 1;
   overflow: hidden;
 }
 
@@ -172,9 +188,9 @@ body {
   position: fixed;
   display: flex;
   width: 90vw;
-  height: 7vh;
-  min-height: 7vh;
-  top: calc(7.5vw - 3.5vh);
+  height: 3.5vw;
+  min-height: 3.5vw;
+  top: calc(7.5vw - 1.75vw);
   z-index: 2;
   background: white;
   border-radius: 0 0 2vmin 0;
@@ -187,15 +203,15 @@ body {
   display: flex;
   left: calc(14.5vw);
   width: 80%;
-  height: 7vh;
+  height: 3.5vw;
 }
 
 .spacer .dropbtn {
   background-color: white;
   color: black;
-  height: 7vh;
+  height: 3.5vw;
   font-size: 1vw;
-  line-height: 7vh;
+  line-height: 3.5vw;
   z-index: 7;
   font-family: Montserrat;
   text-transform: uppercase;
@@ -223,7 +239,7 @@ body {
   background-color: #adcf44;
   border-radius: 0 0 2vmin 0;
   width: calc(90vw - 15vw + 4px - 2vmin);
-  top: calc(7.5vw - 3.5vh + 7vh);
+  top: calc(7.5vw - 1.75vw +  3.5vw);
   left: calc(15vw - 4px);
   -webkit-transition: all .2s ease-in-out;
   transition:         all .2s ease-in-out;
@@ -241,7 +257,7 @@ body {
   padding-left: 1vw;
   padding-right: 1vw;
   font-size: .8vw;
-  line-height: 3vh;
+  line-height: 1.75vw;
   font-family: Montserrat;
   text-transform: lowercase;
   text-align: center;
@@ -268,26 +284,27 @@ body {
 .social {
   position: fixed;
   display: flex;
-  width: 12vh;
-  height: 3.5vh;
-  left: calc(90vw - 12vh );
-  top: calc(7.5vw - 7vh);
+  width: 12vw;
+  height: 3.5vw;
+  left: calc(90vw - 12vw);
+  top: calc(7.5vw - 1.75vw - 3.5vw);
   z-index: 1;
   background: white;
   border-radius: 2vmin 2vmin 0 0;
-  line-height: 7vh;
+  line-height: 3.5vw;
   text-align: right;
   animation: fade-me-in 2s;
+  overflow: visible;
 }
 
 .social img {
   display: block;
   float: right;
   text-align: right;
-  height: 2vh;
-  margin-top: calc(3.5vh - 2.5vh);
-  margin-left: 1vh;
-  margin-right: 1vh;
+  height: 2vw;
+  margin-top: calc(3.5vw - 2.5vw);
+  margin-left: 1vw;
+  margin-right: 1vw;
   -webkit-transition: -webkit-transform .2s ease-in-out;
           transition:         transform .2s ease-in-out;
 }
@@ -304,14 +321,14 @@ body {
   top: 0;
   margin: 0;
   width: 90vw;
-  transform: translateX(5vw);
-  height: 5vh;
+  margin-left: 5vw;
+  height: 7vh;
+  line-height: 7vh;
   z-index: 1;
   background-color: #adcf44;
-  overflow-y: hidden;
-  overflow-x: visible;
-  border-radius: 2vh 2vh 0 0;
+  border-radius: 2vh;
   box-shadow: 4px -4px 19px 2px rgba(0,0,0,0.3);
+  transform: translateY(calc(-12vh + 2px));
 }
 
 .footer p {
