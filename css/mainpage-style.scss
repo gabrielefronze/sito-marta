@@ -44,7 +44,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100vw;
-  height: calc(5vh + 7.5vw - 3.5vh);;
+  height: calc(5vh + 7.5vw - 3.5vh + 2px);
   z-index: 4;
   background-image: url("./images/background-empty.jpg");
   background-position: center;
