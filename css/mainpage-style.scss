@@ -291,10 +291,10 @@ body:after{
 .social {
   position: fixed;
   display: flex;
-  width: 12vw;
-  height: 3.5vw;
-  left: calc(90vw - 12vw);
-  top: calc(7.5vw - 1.75vw - 3.5vw + 2px);
+  width: calc((1.5vw + .5vw *2) * 3);
+  height: 2.5vw;
+  left: calc(90vw - ((1.5vw + .5vw *2) * 3));
+  top: calc(7.5vw - 1.75vw - 2.5vw + 2px);
   z-index: 1;
   background: white;
   border-radius: 2vmin 2vmin 0 0;
@@ -308,10 +308,10 @@ body:after{
   display: block;
   float: right;
   text-align: right;
-  height: 2vw;
-  margin-top: calc(3.5vw - 2.5vw);
-  margin-left: 1vw;
-  margin-right: 1vw;
+  height: 1.5vw;
+  margin-top: calc(.7vw);
+  margin-left: .5vw;
+  margin-right: .5vw;
   -webkit-transition: -webkit-transform .2s ease-in-out;
           transition:         transform .2s ease-in-out;
 }
