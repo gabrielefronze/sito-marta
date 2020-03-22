@@ -7,20 +7,16 @@
   
   <nav class="navbar">
     <div class="spacer">
-      <div class="dropdown">
-        <a href="#whoami">
-          <button class="dropbtn">Chi sono</button>
-        </a>
+      <div class="dropdown" onclick="toggleContent('whoami')">
+        <button class="dropbtn">Chi sono</button>
         <div class="dropdown-content">
           <a href="#contact">Metodo</a>
           <a href="#">Curriculum</a>
         </div>
       </div>
 
-      <div class="dropdown">
-        <a href="#att">
-          <button class="dropbtn">Attività</button>
-        </a>
+      <div class="dropdown" onclick="toggleContent('att')">
+        <button class="dropbtn">Attività</button>
         <div class="dropdown-content">
           <a href="#">Educazione di base</a>
           <a href="#">Educazione per i cuccioli</a>
@@ -29,28 +25,20 @@
         </div>
       </div>
 
-      <div class="dropdown">
-        <a href="#pet">
-          <button class="dropbtn">Pet Therapy</button>
-        </a>
+      <div class="dropdown" onclick="toggleContent('pet')">
+        <button class="dropbtn">Pet Therapy</button>
       </div>
 
-      <div class="dropdown">
-        <a href="#blog">
-          <button class="dropbtn">Blog</button>
-        </a>
+      <div class="dropdown" onclick="toggleContent('blog')">
+        <button class="dropbtn">Blog</button>
       </div>
 
-      <div class="dropdown">
-        <a href="#feedback">
-          <button class="dropbtn">Recensioni</button>
-        </a>
+      <div class="dropdown" onclick="toggleContent('feedback')">
+        <button class="dropbtn">Recensioni</button>
       </div>
 
-      <div class="dropdown">
-        <a href="#contact">
-          <button class="dropbtn">Contatti</button>
-        </a>
+      <div class="dropdown" onclick="toggleContent('contact')">
+        <button class="dropbtn">Contatti</button>
       </div>
     </div>
   </nav>
