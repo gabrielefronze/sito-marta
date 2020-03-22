@@ -121,10 +121,11 @@ body:after{
   padding: 0;
   width: 100vw;
   min-height: 100vh;
+  height: max-content;
   z-index: 1;
   background-color: white;
-  overflow-x: hidden;
-  overflow-y: scroll;
+  overflow: hidden;
+  padding-bottom: calc(15vw + 6vh);
 }
 
 .content {
@@ -132,12 +133,12 @@ body:after{
   padding-top: calc(15vw + 6vh);
   width: 80vw;
   min-height: 100vh;
-  height: fit-content;
+  height: max-content;
   padding-left: 10vw;
   padding-right: 10vw;
   opacity: 0;
   z-index: -2;
-  transition: opacity .5s ease-in-out, z-index .51s;
+  transition: opacity .5s ease-in-out, z-index .51s, transform .8s ease-in-out;
 }
 
 .visible-content {
