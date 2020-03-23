@@ -88,34 +88,41 @@ body:after{
 }
 
 .container-fade-up {
-  display: block;
-  position: relative;
+  display: flex;
+  position: fixed;
   margin: 0;
   left: 0;
-  top: 0;
+  top: 90vh;
   width: 100vw;
   height: 10vh;
   z-index: 5;
   background-image: linear-gradient(to bottom, rgba(255,255,255,0) 0%, white 100%);
 }
 
-.container-fade-down {
-  display: block;
-  position: sticky;
+.top-hide {
+  display: flex;
+  position: fixed;
   margin: 0;
   left: 0;
   top: 0;
   width: 100vw;
   height: calc(5vh + 7.5vw);
-  // transform: translateY(calc(-10vh + 4px));
   z-index: 5;
   background-color: white;
+  transition: none;
+  transform-origin: top;
+  opacity: 0;
+}
+
+.top-hide-visible {
+  opacity: 1;
+  transition: opacity .8s ease-in-out .8s;
 }
 
 .container {
   display: flex;
-  position: relative;
-  top: 0;
+  position: absolute;
+  top: 100vh;
   left: 0;
   margin: 0;
   padding: 0;
@@ -126,6 +133,16 @@ body:after{
   background-color: white;
   overflow: hidden;
   padding-bottom: calc(15vw + 6vh);
+  transition: all .8s ease-in-out;
+  transform-origin: bottom;
+}
+
+.shift-container {
+  top: 0;
+}
+
+.hide-container {
+  transform: scaleY(0);
 }
 
 .content {
@@ -136,19 +153,21 @@ body:after{
   height: max-content;
   padding-left: 10vw;
   padding-right: 10vw;
+  top: 100vh;
   opacity: 0;
   z-index: -2;
-  transition: opacity .5s ease-in-out, z-index .51s, transform .8s ease-in-out;
+  transition: opacity .5s ease-in-out, z-index .51s, top .8s ease-in-out;
 }
 
 .visible-content {
   z-index: 1;
   opacity: 1;
+  top: 0;
 }
 
-.placeholder{
+.placeholder {
   display: flex;
-  position: relative;
+  position: fixed;
   top: 0;
   left: 0;
   margin: 0;
@@ -157,6 +176,7 @@ body:after{
   height: 90vh;
   z-index: 1;
   overflow: hidden;
+  transition: height .8s ease-in-out;
 }
 
 .header {
@@ -342,7 +362,7 @@ body:after{
 
 .footer {
   display: block;
-  position: relative;
+  position: absolute;
   top: 0;
   margin: 0;
   width: 90vw;

@@ -6,9 +6,11 @@ function goTop() {
     top = document.getElementById("top");
   }
 
-  doScrolling(0, 800);
+  tophide.classList.remove("top-hide-visible")
+  container.classList.remove("shift-container")
+  container.classList.add("hide-container")
 
-  setTimeout(function(){location.hash = "top";}, 801);
+  setTimeout(function(){location.hash = "top";}, 900);
 
   call++;
 }
