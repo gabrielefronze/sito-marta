@@ -1,4 +1,3 @@
-var call = 0;
 var placeholder;
 var container;
 var contents;
@@ -9,37 +8,45 @@ function toggleContent(id) {
   content_to_toggle = document.getElementById(id);
   btn_to_toggle = document.getElementById(id+"btn");
 
+  if(!placeholder) placeholder = document.getElementsByClassName("placeholder")[0];
+  if(!container) container = document.getElementsByClassName("container")[0];
+  if(!contents) contents = document.getElementsByClassName("content");
+  if(!btns) btns = document.getElementsByClassName("dropbtn");
+  if(!tophide) tophide = document.getElementsByClassName("top-hide")[0];
+
   for(var i = 0; i < contents.length; i++)
   {
-    contents[i].classList.remove("visible-content");
+    if(contents[i]!==content_to_toggle) contents[i].classList.remove("visible-content");
+    else content_to_toggle.classList.add("visible-content");
   }
 
   for(var j = 0; j < btns.length; j++)
   {
-    btns[j].classList.remove("activebtn");
+    if(btns[j]!==btn_to_toggle) btns[j].classList.remove("activebtn");
+    else btn_to_toggle.classList.add("activebtn");
   }
 
-  content_to_toggle.classList.add("visible-content");
   container.classList.remove("hide-container");
   container.classList.add("shift-container");
   tophide.classList.add("top-hide-visible");
-  if(btn_to_toggle) btn_to_toggle.classList.add("activebtn");
 
-  setTimeout(function(){location.hash = id;}, 900);
-}
+  if(id!=='') history.pushState(null,null,'#'+id)
 
-function initContents() {
-  placeholder = document.getElementsByClassName("placeholder")[0];
-  container = document.getElementsByClassName("container")[0];
-  contents = document.getElementsByClassName("content");
-  btns = document.getElementsByClassName("dropbtn");
-  tophide = document.getElementsByClassName("top-hide")[0];
+  // setTimeout(function(){location.hash = id;}, 900);
 }
 
 $(document).ready(
   function() {
+    if(!placeholder) placeholder = document.getElementsByClassName("placeholder")[0];
+    if(!container) container = document.getElementsByClassName("container")[0];
+    if(!contents) contents = document.getElementsByClassName("content");
+    if(!btns) btns = document.getElementsByClassName("dropbtn");
+    if(!tophide) tophide = document.getElementsByClassName("top-hide")[0];
+
     var id = location.hash.replace('#','');    
-    setTimeout(goTop(), 900);
-    if(id!=="top") setTimeout(toggleContent(id), 900);
+    goTop();
+    if(id!=="top") {
+      toggleContent(id);
+    }
   }
-)
+);
