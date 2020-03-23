@@ -73,12 +73,13 @@ body:after{
   text-align: center;
   text-shadow: 4px 0 32px #FFF, -4px 0 32px #FFF, 0 4px 32px #FFF, 0 -4px 32px #FFF, 2px 2px 32px #FFF, -2px -2px 32px #FFF, 2px -2px 32px #FFF, -2px 2px 32px #FFF;
   animation: fade-me-in 1.5s;
-  -webkit-transition: all .2s ease-in-out;
-  transition:         all .2s ease-in-out;
+  transition:         transform .3s ease-in-out;
+  will-change: transform;
+  transform: scale(1);
 }
 
 .motto:hover {
-  transform: scale(1.03);
+  transform: scale(1.1);
 }
 
 @keyframes fade-me-in {
@@ -128,7 +129,6 @@ body:after{
   padding: 0;
   width: 100vw;
   min-height: 100vh;
-  height: max-content;
   z-index: 1;
   background-color: white;
   overflow: hidden;
@@ -150,7 +150,6 @@ body:after{
   padding-top: calc(15vw + 6vh);
   width: 80vw;
   min-height: 100vh;
-  height: max-content;
   padding-left: 10vw;
   padding-right: 10vw;
   top: 100vh;
@@ -268,6 +267,13 @@ body:after{
   transition:         all .4s ease-in-out;
 }
 
+.spacer .activebtn {
+  color: black;
+  background-color: #f2bb35;
+  transform: scaleX(1.1);
+  cursor: pointer;
+}
+
 .dropdown button:focus {
   outline:0;
 }
@@ -361,7 +367,7 @@ body:after{
 }
 
 .footer {
-  display: block;
+  display: flex;
   position: absolute;
   top: 0;
   margin: 0;
