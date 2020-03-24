@@ -169,11 +169,16 @@ body:after{
 }
 
 .content h1 {
+  padding-top: 6vw;
   font-family: montserrat;
   text-transform: uppercase;
   text-align: center;
   font-size: 3vw;
   color: #adcf44;
+}
+
+.content h1:first-of-type{
+  padding-top: 0;
 }
 
 .content h2 {
