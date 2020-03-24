@@ -147,21 +147,23 @@ body:after{
 
 .content {
   position: absolute;
-  padding-top: calc(15vw + 10vh);
+  padding-top: calc(15vw + 5vh);
   width: 80vw;
   min-height: 100vh;
+  height: fit-content;
   padding-left: 10vw;
   padding-right: 10vw;
   opacity: 0;
   z-index: -2;
   transition: opacity .5s ease-in-out, z-index .51s, transform .8s ease-in-out;
+  transform: scaleY(0);
   transform-origin: bottom;
-  transform: translateY(0vh);
 }
 
 .visible-content {
   z-index: 1;
   opacity: 1;
+  transform: scaleY(1);
 }
 
 .placeholder {
