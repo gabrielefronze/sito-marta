@@ -20,7 +20,7 @@ function toggleContent(id) {
       contents[i].classList.remove("visible-content");
     }
 
-    window.scrollTo(0, 0);
+    container.scrollTo(0, 0);
     content_to_toggle.classList.add("visible-content");
 
     for(var j = 0; j < btns.length; j++)
