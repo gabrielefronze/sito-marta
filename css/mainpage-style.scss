@@ -122,17 +122,18 @@ body:after{
 
 .container {
   display: flex;
-  position: absolute;
+  position: fixed;
   top: 100vh;
   left: 0;
   margin: 0;
   padding: 0;
   width: 100vw;
   min-height: 100vh;
+  height: fit-content;
   z-index: 1;
   background-color: white;
-  overflow: hidden;
-  padding-bottom: calc(15vw + 6vh);
+  overflow-x: hidden;
+  overflow-y: visible;
   transition: all .8s ease-in-out;
   transform-origin: bottom;
 }
@@ -158,12 +159,44 @@ body:after{
   transition: opacity .5s ease-in-out, z-index .51s, transform .8s ease-in-out;
   transform: scaleY(0);
   transform-origin: bottom;
+  overflow: auto;
 }
 
 .visible-content {
   z-index: 1;
   opacity: 1;
   transform: scaleY(1);
+}
+
+.content h1 {
+  font-family: montserrat;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 3vw;
+  color: #adcf44;
+}
+
+.content h2 {
+  padding-top: 6vw;
+  font-family: montserrat;
+  text-transform: uppercase;
+  font-size: 2vw;
+  color: #d16833;
+}
+
+.content h3 {
+  padding-top: 4vw;
+  font-family: montserrat;
+  text-transform: lowercase;
+  font-size: 1.5vw;
+  text-decoration: underline;
+  color: grey;
+}
+
+.content p {
+  font-family: montserrat;
+  font-size: 1.5vw;
+  white-space: pre-line;
 }
 
 .placeholder {
