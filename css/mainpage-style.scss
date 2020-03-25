@@ -194,12 +194,12 @@ body:after{
   padding-top: 4vmin;
   font-family: montserrat;
   text-transform: lowercase;
-  font-size: 1.5vmin;
+  font-size: 1.8vmin;
   text-decoration: underline;
   color: grey;
 }
 
-.content p {
+.content p,ol {
   font-family: montserrat;
   font-size: 1.5vmin;
   white-space: pre-line;
