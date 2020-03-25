@@ -154,6 +154,7 @@ body:after{
   height: fit-content;
   padding-left: 10vw;
   padding-right: 10vw;
+  padding-bottom: 10vh;
   opacity: 0;
   z-index: -2;
   transition: opacity .5s ease-in-out, z-index .51s, transform .8s ease-in-out;
