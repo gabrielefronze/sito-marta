@@ -16,6 +16,10 @@
   font-display: swap;
 }
 
+html{
+  scroll-behavior:smooth
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -203,6 +207,13 @@ body:after{
   font-family: montserrat;
   font-size: 1.5vmin;
   white-space: pre-line;
+}
+
+a.anchor {
+  display: block;
+  position: relative;
+  top: -15vw;
+  visibility: hidden;
 }
 
 .placeholder {
