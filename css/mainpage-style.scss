@@ -290,7 +290,7 @@ a.anchor {
   top: calc(7.5vw - 1.75vw);
   z-index: 2;
   background: white;
-  border-radius: 0 0 2vmin 0;
+  border-radius: 0 0 1.4vw 0;
   box-shadow: 10px 10px 19px -4px rgba(0,0,0,0.3);
 }
 
@@ -340,7 +340,7 @@ a.anchor {
   height: auto;
   position: fixed;
   background-color: #adcf44;
-  border-radius: 0 0 2vmin 0;
+  border-radius: 0 0 1.3vw 0;
   width: calc(90vw - 15vw + 4px - 2vmin);
   top: calc(7.5vw - 1.75vw +  3.5vw);
   left: calc(15vw - 4px);
@@ -393,7 +393,7 @@ a.anchor {
   top: calc(7.5vw - 1.75vw - 2.5vw + 2px);
   z-index: 1;
   background: white;
-  border-radius: 2vmin 2vmin 0 0;
+  border-radius: 1.3vw 1.3vw 0 0;
   line-height: 3.5vw;
   text-align: right;
   overflow: visible;
