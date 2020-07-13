@@ -17,7 +17,7 @@
 }
 
 html{
-  scroll-behavior:smooth
+  scroll-behavior: smooth;
 }
 
 body {
@@ -140,6 +140,7 @@ body:after{
   overflow-y: visible;
   transition: all .8s ease-in-out;
   transform-origin: bottom;
+  scroll-behavior: smooth;
 }
 
 .shift-container {
