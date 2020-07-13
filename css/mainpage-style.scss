@@ -441,9 +441,9 @@ a.anchor {
 .social {
   position: fixed;
   display: flex;
-  width: calc((1.5vw + .5vw *2) * 3);
+  width: calc((1.5vw + .5vw *2) * 5);
   height: 2.5vw;
-  left: calc(90vw - ((1.5vw + .5vw *2) * 3));
+  left: calc(90vw - ((1.5vw + .5vw *2) * 5));
   top: calc(7.5vw - 1.75vw - 2.5vw + 2px);
   z-index: 1;
   background: white;
@@ -489,8 +489,10 @@ a.anchor {
   margin: 0;
   width: 100vw;
   height: 3vh;
-  z-index: 10;
+  z-index: 2;
   background-color: white;
+  overflow: hidden;
+  scroll-behavior: unset;
 }
 
 .footer p {
