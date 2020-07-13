@@ -82,6 +82,12 @@ body:after{
   transform: scale(1);
 }
 
+.emphasis {
+  font-family: playlist;
+  font-size: 3vh;
+
+}
+
 .motto:hover {
   transform: scale(1.1);
 }
@@ -155,7 +161,7 @@ body:after{
   position: absolute;
   padding-top: calc(15vw + 5vh);
   width: 80vw;
-  min-height: 100vh;
+  // min-height: 100vh;
   height: fit-content;
   padding-left: 10vw;
   padding-right: 10vw;
@@ -256,7 +262,7 @@ a.anchor {
   transform: rotate(-10deg);
 }
 
-.extract p, li {
+.extract p, .extract li {
   font-family: 'Roboto Mono', monospace;
   color: #333;
   white-space: pre-line;
