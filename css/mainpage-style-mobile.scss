@@ -133,6 +133,53 @@ body {
   overflow: hidden;
 }
 
+.extract {
+  margin-top: 5vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  padding-top: -10vh; 
+  padding-bottom: 5vh;
+  background-color: whitesmoke;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  border-color: black;
+  -webkit-box-shadow: 7px 10px 32px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 7px 10px 32px 0px rgba(0,0,0,0.75);
+  box-shadow: 7px 10px 32px 0px rgba(0,0,0,0.75);
+}
+
+.extract img {
+  position: relative;
+  display: inline-block;
+  width: 8vw;
+  left: 50vw;
+  top: 0vh;
+  transform: rotate(-10deg);
+}
+
+.extract p, li {
+  font-family: 'Roboto Mono', monospace;
+  color: #333;
+  white-space: pre-line;
+}
+
+.extract li {
+  margin-left: 2vw;
+  font-size: 1.5vmin;
+}
+
+.extract h1 {
+  font-family: 'Roboto Mono', monospace;
+  color: black;
+}
+
+.extract h2 {
+  font-family: 'Roboto Mono', monospace;
+  text-align: center;
+  color: #222;
+}
+
 .header {
   position: fixed;
   min-height: calc((15vw + 19px)*1.1);
