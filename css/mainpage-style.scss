@@ -467,6 +467,15 @@ a.anchor {
   cursor: pointer;
 }
 
+.mapwrap {
+  position: relative;
+  display: inline-block;
+  width: 49%;
+  height: max-content;
+  vertical-align: middle;
+}
+
+
 .footer {
   display: flex;
   position: absolute;
