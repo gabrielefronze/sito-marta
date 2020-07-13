@@ -31,15 +31,26 @@
               <a href="#curriculum">Curriculum</a>
             </div>
           </div>
+
+          <div class="dropdown" onclick="toggleContent('edu')">
+            <button class="dropbtn" id="edubtn">Educazione</button>
+            <div class="dropdown-content">
+              <a href="#puppies">Cuccioli</a>
+              <a href="#adults">Adulti</a>
+            </div>
+          </div>
     
           <div class="dropdown" onclick="toggleContent('att')">
             <button class="dropbtn" id="attbtn">Attività</button>
             <div class="dropdown-content">
-              <a href="#base">Educazione di base</a>
-              <a href="#puppies">Educazione per i cuccioli</a>
-              <a href="#perfectioning">Percorso di prefezionamento</a>
               <a href="#play">Attività Ludico-Sportive</a>
+              <a href="#nature">Natura</a>
+              <a href="#social">Socializzazione</a>
             </div>
+          </div>
+
+          <div class="dropdown" onclick="toggleContent('wood')">
+            <button class="dropbtn" id="woodbtn">Bosco cinofilo</button>
           </div>
     
           <div class="dropdown" onclick="toggleContent('pet')">
@@ -56,7 +67,7 @@
           </div>
     
           <div class="dropdown" onclick="toggleContent('feedback')">
-            <button class="dropbtn" id="feedbackbtn">Recensioni</button>
+            <button class="dropbtn" id="feedbackbtn">Dicono di me</button>
           </div>
     
           <div class="dropdown" onclick="toggleContent('contact')">
@@ -84,8 +95,16 @@
         <div w3-include-html="contents/whoami.html"></div>
       </div>
 
+      <div class="content" id="edu">
+        <div w3-include-html="contents/education.html"></div>
+      </div>
+
       <div class="content" id="att">
         <div w3-include-html="contents/activities.html"></div>
+      </div>
+
+      <div class="content" id="wood">
+        <div w3-include-html="contents/wood.html"></div>
       </div>
 
       <div class="content" id="pet">
