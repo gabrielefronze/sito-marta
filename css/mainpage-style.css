@@ -83,8 +83,9 @@ body:after{
   position: relative;
   padding: 0;
   display: table-cell;
-  height: 100%;
+  height: 50vh;
   width: 20%;
+  max-width: 20%;
   padding-left: 2%;
   padding-right: 2%;
   transform-origin: center center;
@@ -94,15 +95,35 @@ body:after{
 .flip-box-inner {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 50vh;
   text-align: center;
-  transition: transform 0.8s ease-in-out;
+  animation: zoom-to-bg-back .8s forwards;
   transform-style: preserve-3d;
 }
 
 .background-slice:hover .flip-box-inner {
-  transform: rotateY(180deg);
-  transition: transform 0.4s ease-in-out;
+  /* transition: all 0.4s ease-in-out; */
+  animation: zoom-to-bg .4s forwards;
+}
+
+@keyframes zoom-to-bg{
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes zoom-to-bg-back{
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .flip-box-front, .flip-box-back {
@@ -116,11 +137,11 @@ body:after{
   cursor: pointer;
 }
 
-.flip-box-front {
+.flip-box-back {
   background-color: white;
 }
 
-.flip-box-back {
+.flip-box-front {
   color: black;
   background-repeat: no-repeat;
   background-size: cover;
@@ -129,31 +150,60 @@ body:after{
   transition: transform 0.2s ease-in-out;
 }
 
-.background-slice:nth-of-type(1) .flip-box-back {
+.background-changer {
+  position: fixed; /* stretch a fixed position to the whole screen */
+  width: 100vw;
+  height:100vh; /* fix for mobile browser address bar appearing disappearing */
+  top:-25vh;
+  right:0;
+  z-index:-1;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+  background-color: white;
+  background-blend-mode: luminosity;
+}
+
+@media screen and (orientation:portrait) {
+  .background-changer {
+    left:-5vw;
+  }
+}
+
+@media screen and (orientation:landscape) {
+  .background-changer {
+    left:-25vw;
+  }
+}
+
+.background-slice:hover .background-changer {
+  opacity: 1;
+}
+
+.background-slice:nth-of-type(1) .flip-box-front, .background-slice:nth-of-type(1) .background-changer {
   background-color: grey;
   background-image: url(/props/slices/zampa.jpg);
   background-position: center center;
 }
 
-.background-slice:nth-of-type(2) .flip-box-back {
+.background-slice:nth-of-type(2) .flip-box-front, .background-slice:nth-of-type(2) .background-changer {
   background-color: grey;
   background-image: url(/props/slices/trecani.jpg);
   background-position: 60% center;
 }
 
-.background-slice:nth-of-type(3) .flip-box-back {
+.background-slice:nth-of-type(3) .flip-box-front, .background-slice:nth-of-type(3) .background-changer {
   background-color: grey;
   background-image: url(/props/slices/cascata.jpeg);
   background-position: 37% center;
 }
 
-.background-slice:nth-of-type(4) .flip-box-back {
+.background-slice:nth-of-type(4) .flip-box-front, .background-slice:nth-of-type(4) .background-changer {
   background-color: grey;
   background-image: url(/props/slices/cerchio.jpg);
   background-position: 53% center;
 }
 
-.background-slice:nth-of-type(5) .flip-box-back {
+.background-slice:nth-of-type(5) .flip-box-front, .background-slice:nth-of-type(5) .background-changer {
   background-color: grey;
   background-image: url(/props/slices/chloe.jpg);
   background-position: 49% center;
@@ -166,8 +216,8 @@ body:after{
 }
 
 .flip-box-back {
-  background-color: dodgerblue;
-  color: white;
+  background-color: white;
+  color: black;
   transform: rotateY(180deg);;
 }
 
