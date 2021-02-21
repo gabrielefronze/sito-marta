@@ -40,185 +40,146 @@ body:after{
   right:0;
   z-index:-1;
   background: url(./images/background-empty.jpg) center center;
-  /* background-color: #de7b40; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 
+.background-slice-container {
+  position: fixed;
+  top: 25vh;
+  margin: 0;
+  height: 50vh;
+  transform: translateX(0);
+}
+
 @media screen and (orientation:landscape) {
   .background-slice-container {
-    position: fixed;
-    display: table;
-    table-layout: fixed;
-    top: 25vh;
     left: 25vw;
-    margin: 0;
-    /* background-color: royalblue; */
-    /* // background: url(./images/background-empty.jpg) center center; */
     width: 50vw;
-    height: 50vh;
-    transform: translateX(0);
   }
 }
 
 @media screen and (orientation:portrait) {
   .background-slice-container {
-    position: fixed;
-    display: table;
-    table-layout: fixed;
-    top: 25vh;
-    left: 5vw;
-    margin: 0;
-    /* background-color: royalblue; */
-    /* // background: url(./images/background-empty.jpg) center center; */
-    width: 90vw;
-    height: 50vh;
-    transform: translateX(0);
+    left: 3vw;
+    width: 94vw;
   }
 }
 
 .background-slice {
-  position: relative;
+  position: absolute;
   padding: 0;
-  display: table-cell;
   height: 50vh;
-  width: 20%;
-  max-width: 20%;
+  width: 16%;
+  max-width: 16%;
   padding-left: 2%;
   padding-right: 2%;
-  transform-origin: center center;
-  transition: all .3s;
-}
-
-.flip-box-inner {
-  position: relative;
-  width: 100%;
-  height: 50vh;
-  text-align: center;
-  animation: zoom-to-bg-back .8s forwards;
-  transform-style: preserve-3d;
-}
-
-.background-slice:hover .flip-box-inner {
-  /* transition: all 0.4s ease-in-out; */
-  animation: zoom-to-bg .4s forwards;
-}
-
-@keyframes zoom-to-bg{
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes zoom-to-bg-back{
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-.flip-box-front, .flip-box-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  border-radius: 2.6vh;
-  box-shadow: 10px 10px 19px -4px rgba(0,0,0,0.3);
+  transition: z-index 0s .5s;
   cursor: pointer;
 }
 
-.flip-box-back {
-  background-color: white;
+.background-slice:nth-of-type(1) {
+  left: 0%;
 }
 
-.flip-box-front {
-  color: black;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-blend-mode: hard-light;
-  transition: transform 0.2s ease-in-out;
+.background-slice:nth-of-type(2) {
+  left: 20%;
+}
+
+.background-slice:nth-of-type(3) {
+  left: 40%;
+}
+
+.background-slice:nth-of-type(4) {
+  left: 60%;
+}
+
+.background-slice:nth-of-type(5) {
+  left: 80%;
 }
 
 .background-changer {
-  position: fixed; /* stretch a fixed position to the whole screen */
-  width: 100vw;
-  height:100vh; /* fix for mobile browser address bar appearing disappearing */
-  top:-25vh;
-  right:0;
-  z-index:-1;
-  opacity: 0;
-  transition: all 1s ease-in-out;
-  background-color: white;
-  background-blend-mode: luminosity;
-}
-
-@media screen and (orientation:portrait) {
-  .background-changer {
-    left:-5vw;
-  }
-}
-
-@media screen and (orientation:landscape) {
-  .background-changer {
-    left:-25vw;
-  }
-}
-
-.background-slice:hover .background-changer {
+  position: fixed;
+  width: 16%;
+  height: 100%;
+  top: 0;
+  z-index:10;
   opacity: 1;
+  background-size: cover;
+  border-radius: 2.6vh;
+  pointer-events: none;
 }
 
-.background-slice:nth-of-type(1) .flip-box-front, .background-slice:nth-of-type(1) .background-changer {
+@keyframes wide {
+  0% {
+    left: inherit;
+    width: 16%;
+  }
+
+  100% {
+    left: 0%;
+    width: 96%;
+  }
+}
+
+@keyframes narrow {
+  0% {
+    left: 0%;
+    width: 96%;
+  }
+  100% {
+    left: inherit;
+    width: 16%;
+  }
+}
+
+.background-slice:hover {
+  z-index: 100;
+  transition: z-index 0s;
+}
+
+.background-slice > .background-changer {
+  animation: narrow .5s ease-in-out forwards;
+}
+
+.background-slice:hover > .background-changer {
+  animation: wide .5s ease-in-out forwards;
+}
+
+.background-slice:nth-of-type(1) .background-changer {
   background-color: grey;
   background-image: url(/props/slices/zampa.jpg);
   background-position: center center;
 }
 
-.background-slice:nth-of-type(2) .flip-box-front, .background-slice:nth-of-type(2) .background-changer {
+.background-slice:nth-of-type(2) .background-changer {
   background-color: grey;
   background-image: url(/props/slices/trecani.jpg);
   background-position: 60% center;
 }
 
-.background-slice:nth-of-type(3) .flip-box-front, .background-slice:nth-of-type(3) .background-changer {
+.background-slice:nth-of-type(3) .background-changer {
   background-color: grey;
   background-image: url(/props/slices/cascata.jpeg);
   background-position: 37% center;
 }
 
-.background-slice:nth-of-type(4) .flip-box-front, .background-slice:nth-of-type(4) .background-changer {
+.background-slice:nth-of-type(4) .background-changer {
   background-color: grey;
   background-image: url(/props/slices/cerchio.jpg);
   background-position: 53% center;
 }
 
-.background-slice:nth-of-type(5) .flip-box-front, .background-slice:nth-of-type(5) .background-changer {
+.background-slice:nth-of-type(5) .background-changer {
   background-color: grey;
   background-image: url(/props/slices/chloe.jpg);
   background-position: 49% center;
 }
 
-.flip-box-front img {
-  height: 100vh;
-  width: 100%;
-  object-fit: cover;
-}
-
-.flip-box-back {
-  background-color: white;
-  color: black;
-  transform: rotateY(180deg);;
+.background-slice:nth-of-type(5) .background-changer {
+  background-position: 49% 25%;
 }
 
 .background-slice p {
@@ -237,6 +198,7 @@ body:after{
   text-align: center;
   text-shadow: 4px 0 32px #FFF, -4px 0 32px #FFF, 0 4px 32px #FFF, 0 -4px 32px #FFF, 2px 2px 32px #FFF, -2px -2px 32px #FFF, 2px -2px 32px #FFF, -2px 2px 32px #FFF;
   transition: opacity .3s ease-in-out;
+  pointer-events: none;
 }
 
 .background-slice:hover p {
@@ -589,7 +551,7 @@ a.anchor {
   top: calc(7.5vh - 1.75vh);
   z-index: 2;
   background: white;
-  border-radius: 0 0 1.4vh 0;
+  border-radius: 0 0 1.1vh 0;
   box-shadow: 10px 10px 19px -4px rgba(0,0,0,0.3);
 }
 
@@ -640,7 +602,7 @@ a.anchor {
   height: auto;
   position: fixed;
   background-color: #adcf44;
-  border-radius: 0 0 1.3vh 0;
+  border-radius: 0 0 1.1vh 0;
   width: calc(90vw - 15vw + 4px - 2vmin);
   top: calc(7.5vh - 1.75vh +  3.5vh);
   left: calc(15vh - 4px);
@@ -693,8 +655,8 @@ a.anchor {
   top: calc(7.5vh - 1.75vh - 2.5rem + 2px);
   z-index: 0;
   background: white;
-  border-radius: 1.3vh 1.3vh 0 0;
-  line-height: 3.5vw;
+  border-radius: 1.1vh 1.1vh 0 0;
+  line-height: 2.5rem;
   text-align: right;
   overflow: visible;
   box-shadow: 10px 19px 19px -4px rgba(0,0,0,0.3);
@@ -705,7 +667,7 @@ a.anchor {
   float: right;
   text-align: right;
   height: 1.5rem;
-  margin-top: calc(.7rem);
+  margin-top: calc(.5rem);
   margin-left: .5rem;
   margin-right: .5rem;
   transform-origin: bottom center;
